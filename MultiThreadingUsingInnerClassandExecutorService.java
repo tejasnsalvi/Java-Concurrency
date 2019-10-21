@@ -1,4 +1,4 @@
-package com.my.techCharts;
+package com.my;
 
 import java.util.Arrays;
 import java.util.List;
