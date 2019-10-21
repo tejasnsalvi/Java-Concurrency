@@ -1,4 +1,4 @@
-package com.moneycontrol.techCharts;
+package com.my.techCharts;
 
 import java.util.Arrays;
 import java.util.List;
