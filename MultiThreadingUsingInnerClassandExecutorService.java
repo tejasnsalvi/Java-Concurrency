@@ -4,8 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
-public class MultiThreadingUsingInnerClassandExecutorService {
+public class Example1 {
 
     /**
      * This will explain how to use Executor Service and do multithreading using inner class
@@ -20,7 +21,7 @@ public class MultiThreadingUsingInnerClassandExecutorService {
          * i.e if IO time is higher like api/db/file calls then increase threads
          *     if CPU time is higher then no of cores will be your threads
          */
-        ExecutorService executorService = Executors.newFixedThreadPool(4);
+        ExecutorService ext = Executors.newFixedThreadPool(4);
 
         //conside that this list has taken employee names from database 
         List<String> empList = Arrays.asList("A", "B", "C", "D", "E");
@@ -30,6 +31,7 @@ public class MultiThreadingUsingInnerClassandExecutorService {
             // you want to achieve it parallelly
             Runnable r = () -> {
                 double id = serviceGetId(emp);
+                System.out.println(emp);
                 saveToDb(emp, id);
 
                 /**
@@ -38,6 +40,14 @@ public class MultiThreadingUsingInnerClassandExecutorService {
                  * see my other examples "How not to use multithreading
                  */
             };
+            ext.execute(r);
+        }
+        ext.shutdown();
+        try {
+            ext.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+            //this is optional reqd when you want your main thread to wait until all tasks have been excuted
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
     }
@@ -46,7 +56,6 @@ public class MultiThreadingUsingInnerClassandExecutorService {
         return Math.random();
     }
 
-    public static void saveToDb(String name, double id) {
+    public static void saveToDb(String name, double id) {}
         //here basically you will wrtie a code to save your object in db.
-    }
 }
