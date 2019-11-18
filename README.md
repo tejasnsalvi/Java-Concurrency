@@ -12,3 +12,8 @@ Various ways to do multithreading
 
    </br>Refer :- **Example2.java** 
    </br>Note:- Here we create a separate Runnable class and pass our argument or variable via **Constructor** . This technique is helpful when you have a big logic.
+   
+### 3.How to do fetch multithreading result using Callable,Future,executor service
+
+   </br>Refer :- **Example2.java** 
+   </br>Note:- This technique is used when you want the result of thread.  
