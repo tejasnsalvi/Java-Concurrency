@@ -15,5 +15,5 @@ Various ways to do multithreading
    
 ### 3.How to do fetch multithreading result using Callable,Future,executor service
 
-   </br>Refer :- **Example2.java** 
+   </br>Refer :- **Example3.java** 
    </br>Note:- This technique is used when you want the result of thread.  
