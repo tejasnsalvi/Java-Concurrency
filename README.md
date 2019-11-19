@@ -3,7 +3,7 @@ Java multithreading and concurrency control examples with real life application 
 
 ## What is Multithreading?
    </br> 1.Writing non-blocking code by running a task on a separate thread than the main application thread.
-         2.This way, your main thread does not block/wait for the completion of the task and it can execute other tasks in parallel.
+   </br> 2.This way, your main thread does not block/wait for the completion of the task and it can execute other tasks in parallel.
    
 Various ways to do multithreading
 
